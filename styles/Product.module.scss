@@ -94,7 +94,7 @@
   > a {
     text-decoration: none;
     > button {
-      margin-top: .8rem;
+      margin-top: 0.8rem;
       background: none;
       border: 1px solid black;
       padding: 1rem;
@@ -103,7 +103,7 @@
       font-family: "PT Serif", serif;
       transition: all 0.3s ease-in-out;
       cursor: pointer;
-      margin-bottom: .8rem;
+      margin-bottom: 0.8rem;
 
       &:hover {
         background: rgb(10, 10, 10);
@@ -153,46 +153,273 @@
   padding: 2rem;
 }
 
-.box {
-  width: 350px;
+// .box {
+//   width: 350px;
+//   height: 247px;
+//   overflow: hidden;
+
+//   &:hover .icons {
+//     opacity: 1;
+//   }
+//   &:hover .sideicons {
+//     animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+//   }
+//   &:hover img {
+//     scale: 1.1;
+//     transition: all 0.3s ease;
+//   }
+
+//   &:hover .title {
+//     transition: all ease 0.5s;
+//     color: black;
+//   }
+// }
+
+// .icons {
+//   position: relative;
+//   opacity: 0;
+//   display: none;
+//   top: -260px;
+//   @include flexer(column);
+//   transition: all 0.3s ease;
+
+//   .blank {
+//     height: 95px;
+//   }
+// }
+
+// .title {
+//   @include flexer(row, space-between);
+//   width: 100%;
+//   color: rgba(0, 0, 0);
+//   background-color: white;
+//   h4 {
+//     font-size: 1.05rem;
+//   }
+//   p {
+//     font-size: 1.5rem;
+//   }
+//   &:hover .title {
+//     transition: all ease 0.5s;
+//     color: black;
+//   }
+
+//   @media screen and (max-width: 400px) {
+//     h4{
+//       font-size: .9rem;
+//     }
+//     p{
+//       font-size: 1.2rem;
+//     }
+//   }
+// }
+
+// .sideicons {
+//   height: 35px;
+//   font-size: 1.22rem;
+//   border-radius: 100px;
+//   width: 35px;
+//   padding-top: 4px;
+//   border: none;
+//   background: $color;
+//   color: white;
+//   margin: 0 5px;
+//   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+//   a {
+//     color: white;
+//   }
+// }
+
+.card {
+  position: relative;
+  width: 300px;
   height: 247px;
   overflow: hidden;
-
-  &:hover .icons {
-    opacity: 1;
-  }
-  &:hover .sideicons {
-    animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  }
-  &:hover img {
-    scale: 1.1;
-    transition: all 0.3s ease;
-  }
-
-  &:hover .title {
-    transition: all ease 0.5s;
-    color: black;
-  }
 }
-
-.icons {
-  position: relative;
-  opacity: 0;
-  display: none;
-  top: -260px;
-  @include flexer(column);
-  transition: all 0.3s ease;
-
-  .blank {
-    height: 95px;
-  }
-}
-
-.title {
-  @include flexer(row, space-between);
-  width: 100%;
+.card:hover .title {
+  display: inline-block;
+  opacity: 1;
+  transition: all .2s ease-in-out;
+  bottom: 0;
+  left: 0;
   color: rgba(0, 0, 0);
   background-color: white;
+  @include flexer(row, space-between);
+  width: 100%;
+  position: absolute;
+}
+
+.card:hover .waku{
+  scale: 1.2;
+  transition: all .3s ease-in-out;
+}
+.content {
+  width: 300px;
+  height: 247px;
+  transition: transform 0.3s ease-in-out;
+
+  img {
+    width: 300px;
+    height: 247px;
+  }
+
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 247px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+
+  .sideicons {
+    background: red;
+    display: inline-block;
+    margin: 0 5px;
+    margin-top: 90px;
+    height: 35px;
+    font-size: 1.22rem;
+    border-radius: 100px;
+    cursor: pointer;
+    width: 35px;
+    padding-top: 4px;
+    border: none;
+    background: $color;
+    color: white;
+    opacity: 0;
+
+    a {
+      color: white;
+    }
+
+    &:hover{
+      transform: translateX(5px);
+    }
+
+    &:nth-child(1) {
+      -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        both;
+      animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation-delay: .4s;
+      -webkit-animation-delay: .4s;
+    }
+    &:nth-child(2) {
+      -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+      animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation-delay: .3s;
+      -webkit-animation-delay: .3s;
+    }
+    &:nth-child(3) {
+      -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+      animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation-delay: .2s;
+      -webkit-animation-delay: .2s;
+    }
+  }
+}
+
+.card:hover .overlay {
+  display: block;
+}
+
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(85px);
+    transform: translateX(85px);
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(85px);
+    transform: translateX(85px);
+    opacity: 1;
+  }
+}
+
+
+
+
+@media screen and (max-width: 375px) {
+  @-webkit-keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(230%);
+      transform: translateX(230%);
+    }
+  }
+  @keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(230%);
+      transform: translateX(230%);
+      opacity: 1;
+    }
+  }
+}
+@media screen and (max-width: 340px) {
+  @-webkit-keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(180%);
+      transform: translateX(180%);
+    }
+  }
+  @keyframes slide-right {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(180%);
+      transform: translateX(180%);
+      opacity: 1;
+    }
+  }
+}
+
+// .title{
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+
+// }
+
+.title {
+  // @include flexer(row, space-between);
+  // width: 100%;
+  // position: absolute;
+  // display: none;
+  opacity: 0;
+
+  // bottom: 0;
+  // left: 0;
+  // color: rgba(0, 0, 0);
+  // background-color: white;
   h4 {
     font-size: 1.05rem;
   }
@@ -205,27 +432,11 @@
   }
 
   @media screen and (max-width: 400px) {
-    h4{
-      font-size: .9rem;
+    h4 {
+      font-size: 0.9rem;
     }
-    p{
+    p {
       font-size: 1.2rem;
     }
-  }
-}
-
-.sideicons {
-  height: 35px;
-  font-size: 1.22rem;
-  border-radius: 100px;
-  width: 35px;
-  padding-top: 4px;
-  border: none;
-  background: $color;
-  color: white;
-  margin: 0 5px;
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  a {
-    color: white;
   }
 }

@@ -98,7 +98,7 @@ const Product_show_component = ({ params }) => {
   );
 };
 
-const Tabsection = ({productName}) => {
+const Tabsection = ({ productName }) => {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
@@ -124,7 +124,8 @@ const Tabsection = ({productName}) => {
           p={20}
           border={"none"}
           w={["17rem", "full"]}
-          m={".2rem"}a
+          m={".2rem"}
+          a
           _hover={{ borderTop: "2px solid #8f0d0a" }}
           _selected={{ borderTop: "2px solid #8f0d0a" }}
         >
@@ -163,15 +164,6 @@ const Tabsection = ({productName}) => {
           </Text>
         </TabPanel>
         <TabPanel w={"100%"}>
-          {/* <Heading
-            w={"100%"}
-            mb={"2rem"}
-            fontFamily={"PT Serif"}
-            fontSize={width > 768 ? "1.7rem" : "1.2rem"}
-            fontWeight={"lighter"}
-          >
-            Additional Information
-          </Heading> */}
           <Flex
             w={"100%"}
             display={"flex"}
@@ -196,14 +188,6 @@ const Tabsection = ({productName}) => {
               flexDirection={width > 768 ? "row" : "column"}
             >
               <Box w={width > 768 ? "50%" : "100%"}>
-                {/* <Heading
-                  mb={"2rem"}
-                  fontFamily={"PT Serif"}
-                  fontSize={"1.7rem"}
-                  fontWeight={"lighter"}
-                >
-                  Reviews
-                </Heading> */}
                 <Text
                   fontSize={"large"}
                   color={"GrayText"}
@@ -220,7 +204,12 @@ const Tabsection = ({productName}) => {
                   fontSize={"1.7rem"}
                   fontWeight={"lighter"}
                 >
-                  Be the first to review &#34;{productName}&#34;
+                  Be the first to review{" "}
+                  <Text display={"inline-block"} color={"#8f0d0a"}>
+                    &#34;
+                    {productName}
+                    &#34;
+                  </Text>
                 </Heading>
                 <Text mb={"2rem"} color={"GrayText"} fontFamily={"PT Serif"}>
                   Your email address will not be published. Required fields are
