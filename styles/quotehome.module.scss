@@ -1,0 +1,155 @@
+@import "./utils";
+
+.number {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  color: black;
+  margin-top: 2rem;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5rem;
+
+  h2 {
+    text-align: center;
+    font-family: $font4;
+    font-weight: lighter;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .headings {
+    font-size: 3rem;
+    text-align: center;
+    margin: 1rem;
+  }
+
+  .allquotes {
+    color: white;
+    @include flexer(row);
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .para {
+    @include flexer(column, center);
+    text-align: center;
+    height: 34vh;
+    padding: 0rem 1rem;
+    transition: all 0.4s ease;
+    width: 85vw;
+
+    .line {
+      width: 45%;
+      margin-top: 2.4rem;
+    }
+
+    .logo {
+      color: $color;
+      font-size: 1.6rem;
+      width: 100vw;
+      padding-right: 65rem;
+    }
+
+    .quote {
+      font-size: 1.7rem;
+      font-style: italic;
+      margin: 1rem;
+      color: black;
+    }
+
+    .author {
+      font-size: 2rem;
+      .name {
+        font-weight: bold;
+        font-size: 1.2rem;
+        @include flexer(column);
+        color: black;
+
+        .expertise {
+          color: $color;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1442px) {
+  .number {
+    .para {
+      .logo {
+        padding-right: 40rem;
+      }
+      .quote {
+        font-size: 1.6rem;
+      }
+      .author {
+        font-size: 1.5rem;
+      }
+      .name {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1148px) {
+  .number {
+    .para {
+      .logo {
+        padding-right: 12rem;
+      }
+      .quote {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 748px) {
+  .number {
+    .allquotes {
+      color: white;
+      @include flexer(column);
+    }
+
+    .para {
+      @include flexer(column, center);
+      height: 45vh;
+      width: 85vw;
+
+      .logo {
+        width: 100vw;
+        padding-right: 25rem;
+      }
+
+      .quote {
+        font-size: 2rem;
+      }
+      .author {
+        font-size: 1.2rem;
+
+        .name {
+          font-size: 1rem;
+          @include flexer(column);
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .number {
+    .para {
+      .logo {
+        padding-right: 12rem;
+      }
+      .quote {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

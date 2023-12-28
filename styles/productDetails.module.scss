@@ -1,0 +1,207 @@
+@import "./utils";
+
+.product_detail {
+  height: fit-content;
+  width: 100%;
+  @include flexer(column);
+}
+
+.head {
+  width: 100%;
+  height: fit-content;
+  @include flexer(column);
+  padding: 4rem 3rem;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .red{
+    color: $color;
+  }
+}
+
+.body {
+  @include flexer(row);
+  width: 90%;
+  height: fit-content;
+  .left {
+    width: 50%;
+    height: 54vh;
+  }
+}
+
+
+.right {
+  height: 54vh;
+  width: 40%;
+  @include flexer(column, start, start);
+  margin-left: 2rem;
+
+  h2 {
+    text-align: start;
+    color: $color1;
+    font-weight: lighter;
+    justify-content: start;
+    font-family: "PT Serif", serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    text-align: start;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: $color;
+    margin-top: 1rem;
+  }
+
+  p {
+    color: $color1;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    color: $color1;
+    font-family: "PT Serif", serif;
+    font-weight: lighter;
+    padding-bottom: 0.8rem;
+  }
+
+  .selection select {
+    border: none;
+    outline: none;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 20rem;
+    font-size: 1rem;
+    color: $color3;
+  }
+
+  .numbers {
+    width: 90%;
+    input {
+      padding: 0.8rem 0.3rem;
+      padding-left: 2rem;
+      color: $color3;
+      border: 2px solid $color2;
+      outline: none;
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+      width: 100%; 
+    }
+
+    button {
+      background-color: $color;
+      cursor: pointer;
+      font-family: "PT Serif", serif;
+      margin-top: 1rem;
+      border: none;
+      outline: none;
+      padding: 0.8rem 2rem;
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .texting {
+    font-family: "PT Serif", serif;
+    color: black;
+
+    span {
+      color: $color1;
+    }
+
+    .colorchange:hover {
+      color: #c49851;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width:500px) {
+    margin-left: .8rem;
+  }
+}
+
+// DOWN SECTION
+.formspan {
+  margin-left: 0.5rem;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  &:hover {
+    color: black;
+  }
+}
+
+// MEDIA QUERIRES
+
+@media only screen and (max-width: 1108px) {
+  .body {
+    width: 80%;
+    @include flexer(column);
+  }
+
+  .body {
+    @include flexer(column);
+    width: 90%;
+    height: fit-content;
+    .left {
+      width: 100%;
+      height: fit-content;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .right {
+    width: 95%;
+    height: fit-content;
+
+    .numbers {
+      input {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 978px) {
+  .head {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .head {
+    padding: 0.34rem;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .body {
+    @include flexer(column);
+  }
+
+  .right {
+    width: 98%;
+  }
+
+  .left {
+    padding: 0;
+  }
+
+  .thumbnail {
+    margin-top: 1rem;
+    width: 3rem;
+  }
+}

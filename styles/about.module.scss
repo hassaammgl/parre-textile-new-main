@@ -1,0 +1,291 @@
+@import "../styles/utils";
+
+.about {
+  height: fit-content;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  .left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-family: $font4;
+      font-weight: lighter;
+      font-size: 2.4rem;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    h2 {
+      margin: 2rem 0;
+      font-family: "PT Serif", serif;
+      font-weight: 400;
+      font-size: 2rem;
+      color: $color;
+      text-align: center;
+    }
+
+    .color {
+      background: $color;
+      padding: 1.5rem 1rem;
+      width: 100%;
+      > .about_p {
+        font-size: 1.2rem;
+        width: 100%;
+        color: white;
+        padding-right: 1rem;
+        font-family: "PT Serif", serif;
+        font-weight: 400;
+        margin: 10px;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+// TEAM
+.team {
+  height: 78vh;
+  overflow: hidden;
+  width: 100%;
+  @include flexer(column);
+  flex-wrap: wrap;
+
+  .lef1 {
+    width: 100%;
+    height: 25vh;
+    margin-top: 1rem;
+    @include flexer(column);
+
+    h4 {
+      color: $color;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+
+  .rigt1 {
+    width: 100%;
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 3.5rem;
+    @include flexer(row);
+    margin: 1rem;
+    gap: 3rem;
+
+    .sect {
+      margin-bottom: 3rem;
+      text-align: center;
+      img {
+        height: 300px;
+        width: 300px;
+      }
+      h1 {
+        font-size: 1.4rem;
+        font-weight: lighter;
+        margin: 0.8rem;
+      }
+      p {
+        font-size: 0.9rem;
+        color: $color;
+        font-weight: bold;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1680px) {
+    .lef1 {
+      height: 20vh;
+      margin-top: 0.5rem;
+    }
+    .rigt1 {
+      margin-top: 3rem;
+      height: 40vh;
+      padding-bottom: 12rem;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .team {
+    height: 90vh;
+    width: 100%;
+    @include flexer(center, center);
+
+    .rigt1 {
+      margin-bottom: 4rem;
+      .sect {
+        height: 40vh;
+        margin-top: 1.2rem;
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 1382px) {
+//   .team {
+//     height: 85vh;
+//     width: fit-content;
+//     margin: 0px;
+//     @include flexer(center, center);
+//   }
+// }
+
+// @media screen and (max-width: 1375px) {
+//   .team {
+//     height: 82vh;
+//   }
+// }
+
+@media screen and (max-width: 1024px) {
+  .team {
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+    @include flexer(center, center);
+
+    .rigt1 {
+      text-align: center;
+      justify-content: center;
+      width: fit-content;
+      height: fit-content;
+      .sect {
+        height: 40vh;
+        margin-top: 1.2rem;
+
+        img {
+          height: 30vh;
+          width: 22vw;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .team {
+    height: fit-content;
+    width: 100%;
+    margin: 0;
+
+    .rigt1 {
+      margin-bottom: 0rem;
+    }
+
+    .lef1 {
+      width: 100vw;
+      height: 25vh;
+      margin-top: 1rem;
+      @include flexer(column);
+
+      h4 {
+        color: #bb6830;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 2.3rem;
+        text-align: center;
+      }
+    }
+
+    .rigt1 {
+      width: 100%;
+      .sect {
+        text-align: center;
+        img {
+          height: 200px;
+          width: 200px;
+        }
+        h1 {
+          font-size: 1rem;
+          font-weight: lighter;
+          margin: 0.8rem;
+        }
+        p {
+          font-size: 0.9rem;
+          color: $color;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 732px) {
+  .team {
+    height: fit-content;
+    width: fit-content;
+    margin: 0;
+    .lef1 {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 25vh;
+      margin-top: 1rem;
+      @include flexer(column);
+
+      h4 {
+        color: $color;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+    }
+
+    .rigt1 {
+      width: fit-content;
+      margin-top: 0;
+      height: fit-content;
+      @include flexer(column);
+      margin-bottom: 4rem;
+      .sect {
+        margin-bottom: 4rem;
+        text-align: center;
+        img {
+          height: 300px;
+          width: 300px;
+        }
+        h1 {
+          font-size: 1rem;
+          font-weight: lighter;
+          margin: 0.8rem;
+        }
+        p {
+          font-size: 0.9rem;
+          color: $color;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

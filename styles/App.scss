@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap");
+@import "./utils";
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font2;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.image-gallery-fullscreen-button,
+.image-gallery-play-button {
+  bottom: 0;
+  padding: 20px;
+  outline: none;
+  border: none;
+  background: rgba(0, 0, 0, 0.404);
+  color: white;
+  border-radius: 50%;
+}
+
+.ant-collapse .ant-collapse-item .ant-collapse-header .ant-collapse-expand-icon span svg {
+  color: #fff !important;
+}

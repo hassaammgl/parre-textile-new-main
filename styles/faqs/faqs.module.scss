@@ -1,0 +1,48 @@
+@import "../utils";
+
+.faqs{
+    margin: 2rem 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 3rem;
+
+    label{
+        color: white;
+    }
+
+    h3{
+        color: white;
+    }
+
+    h4{
+        color: white;
+    }
+
+    h2{
+        color: black;
+        font-family: $font4;
+        font-weight: lighter;
+        font-size: 2.4rem;
+        margin: 1rem;
+        text-align: center;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    .parre{
+        color: black;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 1rem;
+    }
+}
+
+.content{
+    width: 80%;
+}
+
+.ant-collapse .ant-collapse-item .ant-collapse-header .ant-collapse-expand-icon span svg {
+    color: #fff !important;
+}

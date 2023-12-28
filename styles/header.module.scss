@@ -1,0 +1,423 @@
+@import "./utils";
+
+.header {
+  @include hw;
+  border-bottom: 1px solid #00000042;
+  border-top: 20px solid $color;
+}
+
+.hamburger {
+  display: none;
+}
+
+.navbar {
+  @include flexer();
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  @include flexer(row, space-between);
+  padding: 2rem 1rem;
+  height: 20vh;
+
+  .navbar_logo {
+    padding-left: 10rem;
+  }
+
+  @media screen and (max-width: 2560px) and (min-width: 1700px) {
+    .navbar_logo {
+      padding-left: 0;
+      .link {
+        img {
+          height: 12vh;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1059px) {
+    .navbar_logo {
+      padding-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 1700px) and (min-width: 1681px) {
+    .navbar_logo {
+      padding-left: 0;
+      .link {
+        img {
+          height: 10vh;
+        }
+      }
+    }
+  }
+}
+
+.links {
+  @include flexer(row, space-between);
+  @include hw(25%);
+
+  > a {
+    color: rgb(0, 0, 0);
+    font-family: "Antic Didone", serif;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all ease 0.5s;
+    font-weight: 600;
+
+    &:hover {
+      color: $color1;
+    }
+  }
+}
+
+.navbar_logo {
+  @include flexer();
+  .link {
+    > img {
+      width: 48%;
+      @include hw(60%, 60%);
+      border: 1px solid $color;
+      padding: 4px 22px;
+    }
+  }
+}
+
+.icons {
+  @include hw(20%);
+  @include flexer(row, flex-end);
+}
+.icons1 {
+  @include hw(20%);
+  @include flexer(row, flex-start);
+}
+@media screen and (max-width: 1050px) {
+  .icons1 {
+    display: none;
+  }
+}
+
+.btn {
+  background: none;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  @include flexer;
+  font-size: 1.5rem;
+  margin: 5px 10px;
+  border: none;
+
+  &:hover {
+    background: $color2;
+  }
+}
+
+.search_modal {
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  height: 25vh;
+  top: 0px;
+  right: 0px;
+  background: rgb(255, 255, 255);
+  box-shadow: 3px 3px 13px black;
+
+  .search_modal_header {
+    padding: 1rem;
+    @include flexer(row, space-between);
+
+    .navbar_logo {
+      img {
+        height: 11.5vh;
+        margin-top: 2rem;
+        width: 15vw;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .closeIcon {
+    background: none;
+    font-size: xx-large;
+    margin-top: 1.9rem;
+    color: rgb(0, 0, 0);
+    margin-right: 2rem;
+    border: none;
+  }
+
+  // styles/searchMenu.scss
+
+  .searcmenu {
+    width: 50%;
+    margin: auto;
+    margin-top: 3rem;
+    height: 4rem;
+    padding: 1.1rem;
+    display: flex;
+    
+    margin-left: 20%;
+    align-items: center;
+    position: relative;
+
+    button {
+      background: none;
+      border: none;
+      padding-right: 1rem;
+      cursor: pointer;
+      font-size: xx-large;
+    }
+
+    input {
+      padding-left: 30px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      height: 30px;
+      box-sizing: border-box;
+      width: 60%;
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 1.6rem;
+    }
+
+    svg {
+      position: absolute;
+      left: 10px; 
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: #666; 
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .search_modal {
+    .searcmenu {
+      margin-top: 0rem;
+      width: 95%;
+      input {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.side_menu {
+  width: 100%;
+  height: 46vh;
+  position: static;
+  background-color: black;
+  right: 0;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    width: 390px;
+  }
+}
+
+.sear {
+  width: 95%;
+  margin: 10px 4px;
+  border-bottom: 1px solid rgb(102, 100, 100);
+  outline: none;
+  justify-content: center;
+  text-align: center;
+
+  input {
+    width: 100%;
+    margin: 0 0.2rem;
+    padding: 10px 25px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+}
+
+.sidelink {
+  height: auto;
+  margin-top: 2.5rem;
+  @include flexer(column, center);
+  padding: 0 10px 10px 10px;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .sidelink {
+    margin-top: .5rem;
+    height: 300px;
+  }
+}
+
+.hamlink {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid black;
+
+  &:hover {
+    color: peachpuff;
+    border-bottom: 2px solid white;
+  }
+}
+
+@media screen and (max-width: 1518px) {
+  .links {
+    a {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .links {
+    @include flexer(row, space-between);
+    height: 40%;
+    width: 25%;
+    font-size: 0.8rem;
+
+    a {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1370px) {
+  .links {
+    a {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .links {
+    width: 28%;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1056px) {
+  .links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    @include flexer();
+    padding: 10px 15px;
+    border-radius: 200px;
+    border: none;
+
+    &:hover {
+      background-color: $color2;
+    }
+  }
+
+  .side_menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .icons {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    @include flexer();
+    padding: 0;
+    height: 18vh;
+    margin: 0;
+    @include flexer(row, space-between);
+    padding: 2rem 1rem;
+
+    .navbar_logo {
+      margin-left: 1rem;
+    }
+  }
+
+  .links {
+    display: none;
+
+    > a {
+      color: black;
+      text-decoration: none;
+      transition: all ease 0.5s;
+      font-weight: 600;
+
+      &:hover {
+        color: $color1;
+      }
+    }
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    @include flexer();
+    padding: 10px 15px;
+    border-radius: 200px;
+    border: none;
+
+    &:hover {
+      background-color: $color2;
+    }
+
+    .navbar_logo {
+      @include flexer();
+      .link {
+        > img {
+          width: 48%;
+          @include hw(60%, 60%);
+        }
+      }
+    }
+
+    .icons {
+      @include hw(20%);
+      @include flexer(row);
+    }
+
+    .btn {
+      background: none;
+      border-radius: 50px;
+      width: 40px;
+      height: 40px;
+      @include flexer;
+      font-size: 1.5rem;
+      margin: 5px 10px;
+      border: none;
+
+      &:hover {
+        background: $color2;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navbar {
+    height: 15vh;
+  }
+}
+
+@media screen and (max-width: 2560px) and (min-width: 1700px) {
+  .links {
+    width: 28%;
+    a {
+      font-size: 1.2rem;
+    }
+  }
+  .navbar_logo {
+    @include flexer();
+    .link {
+      > img {
+        @include hw(100%, 100%);
+      }
+    }
+  }
+}
