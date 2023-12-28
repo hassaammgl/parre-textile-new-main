@@ -303,6 +303,7 @@
     }
 
     &:nth-child(1) {
+      padding-top: 6px;
       -webkit-animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
         both;
       animation: slide-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
