@@ -112,7 +112,7 @@ const Tabsection = ({ productName }) => {
     };
   }, []);
   return (
-    <Tabs width={"100%"} mb={"1.5rem"} p={width < 768 ? "2rem" : "17rem"}>
+    <Tabs width={"100%"} mb={"1.5rem"} p={width < 768 ? "2rem" : "7rem"}>
       <TabList
         mb={"5rem"}
         display={"flex"}
